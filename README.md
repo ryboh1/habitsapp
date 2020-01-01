@@ -1,5 +1,5 @@
 # habitsapp
-A Desktop App for automating Creating and Destroying Habits
+A Desktop App for Creating and Destroying Habits
 
 ## Getting Started
 
