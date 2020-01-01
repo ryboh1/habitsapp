@@ -3,6 +3,10 @@ A Desktop App for Creating and Destroying Habits
 
 ## Getting Started
 
+### Requirements 
+- Nodejs
+- Electron
+
 ## Instructions
 
 ## Author
