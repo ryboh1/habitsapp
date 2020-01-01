@@ -11,7 +11,10 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
-}
+  win.loadFile('./templates/index.html')
 
+  // Chrome Dev Tools
+  win.webContents.openDevTools()
+
+}
 app.on('ready', createWindow)

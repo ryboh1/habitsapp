@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-
     <title>Habits App</title>
 
   </head>
-  <body>
-    <a href="./nextpage.html">Next Page</a>
 
-    <script>document.write(process.versions.node)</script>
-    <script>document.write(process.versions.chrome)</script>
-    <script>document.write(process.versions.electron)</script>
+  <body>
+    <div id="nav"></div>
+
+
+
+
+
+    <div id="footer"></div>
+    <!-- JQuery -->
+    <script>
+      window.$ = window.jQuery = require("./jquery-1.10.2.min.js");
+    </script>
+
+    <!-- nav and footer -->
+    <script>
+      $(() => $("#nav").load("./nav.html"));
+      $(() => $("#footer").load("./footer.html"));
+    </script>
+
   </body>
 </html>
