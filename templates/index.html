@@ -4,27 +4,36 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
     <title>Habits App</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
 
+    <link rel="stylesheet" href="">
   </head>
 
   <body>
     <div id="nav"></div>
 
-
+    <h2 id="list">Hello</h2>
 
 
 
     <div id="footer"></div>
+
+
     <!-- JQuery -->
-    <script>
-      window.$ = window.jQuery = require("./jquery-1.10.2.min.js");
+    <script>      
+      window.$ = require("./jquery-1.10.2.min.js");
     </script>
 
     <!-- nav and footer -->
+    <script src="helpers.js"></script>
+
     <script>
-      $(() => $("#nav").load("./nav.html"));
-      $(() => $("#footer").load("./footer.html"));
+      let theTemplate = new template();
+      theTemplate.loadTemplate("list");
     </script>
 
   </body>

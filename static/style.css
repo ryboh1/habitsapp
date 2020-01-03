@@ -1,0 +1,31 @@
+/* navbar */ 
+.white{
+    color:white;
+}
+
+.navy-bg{
+    background-color: #0C0253;
+}
+
+.white a{
+    color: white;
+}
+
+.orange-hover a:hover{
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: orange ;
+}
+
+.font-20 a{
+    font-size: 20px;
+}
+
+.negative-m-10{
+    margin-left:-100px;
+}
+
+.current-page{
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
