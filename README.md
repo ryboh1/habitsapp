@@ -6,6 +6,8 @@ A Desktop App for Creating and Destroying Habits
 ### Requirements 
 - Nodejs
 - Electron
+- JQuery
+- Bootstrap
 
 ## Instructions
 
