@@ -1,3 +1,7 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
 /* navbar */ 
 #nav{
     position: fixed;
@@ -35,6 +39,7 @@
 .current-page{
     text-decoration: underline;
     text-decoration-color: orange;
+    
 }
 
 /* footer*/
@@ -46,8 +51,18 @@
     width: 100%;
     color: white;
     font-size: 20px;
-  }
+}
 
+.footer a{
+    color:white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+    text-decoration-color: orange;
+    color:white;
+}
 /*About Page*/
 
 .turquoise-bg{
@@ -55,14 +70,20 @@
 }
 
 .about{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     bottom: 75px;
     top: 75px;
-    right: 5px;
-    left: 5px;
+}
+
+.about-content{
+    display: block;
+    text-align: center;
+    font-weight: bold;
 }
 
 .about img{
-    height:350px;
-    width:250px;
+    height:250px;
+    width:175px;
+    margin:15px 0px;
 }
