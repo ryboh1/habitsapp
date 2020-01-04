@@ -13,12 +13,10 @@
     <link rel="stylesheet" href="">
   </head>
 
-  <body>
+  <body class="turquoise-bg">
     <div id="nav"></div>
 
-    <h2 id="list">Hello</h2>
-
-
+    <div id="currentPage"></div>    
 
     <div id="footer"></div>
 
@@ -28,12 +26,11 @@
       window.$ = require("./jquery-1.10.2.min.js");
     </script>
 
-    <!-- nav and footer -->
+    <!-- nav, currentPage and footer -->
     <script src="helpers.js"></script>
-
     <script>
-      let theTemplate = new template();
-      theTemplate.loadTemplate("list");
+      let theTemplate = new template("./about.html");
+      theTemplate.loadTemplate("about");
     </script>
 
   </body>

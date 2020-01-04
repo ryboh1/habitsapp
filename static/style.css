@@ -1,4 +1,11 @@
 /* navbar */ 
+#nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+}
+
 .white{
     color:white;
 }
@@ -40,3 +47,18 @@
     color: white;
     font-size: 20px;
   }
+
+/*About Page*/
+
+.turquoise-bg{
+    background-color: #f5f5f5;
+}
+
+.about{
+    overflow: scroll;
+}
+
+.about img{
+    height:350px;
+    width:250px;
+}
