@@ -56,6 +56,10 @@
 
 .about{
     overflow: scroll;
+    bottom: 75px;
+    top: 75px;
+    right: 5px;
+    left: 5px;
 }
 
 .about img{
