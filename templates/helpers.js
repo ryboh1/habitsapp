@@ -3,15 +3,15 @@ function template(currentPagePath){
     this.currentPagePath = currentPagePath;
 
     this.loadTemplate = async (pageHeading) => { 
-        /* When the load is complete the resolve function is then used */
+        /* Waits for navbar to be loaded first */
             await new Promise(resolve => $('#nav').load('./nav.html', resolve));
-            await new Promise(resolve => $("#currentPage").load(this.currentPagePath, resolve));
-            await new Promise(resolve => $('#footer').load('./footer.html', resolve));
+
+            $("#currentPage").load(this.currentPagePath);
+            $('#footer').load('./footer.html');
             $(`#${pageHeading}`).addClass("current-page");
           };
           
-    this.loadForm = (currentForm) => {
-        $("#create-forms").load(`create-forms.html #${currentForm}`);
-        console.log("ran");
+    this.loadForm = () => {
+        $("#currentForm").load(`./create-forms.html`);
     }
     };

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     
@@ -17,7 +16,12 @@
   <body class="background">
     <div id="nav"></div>
 
-    <div id="currentPage"></div>    
+    <div class="container create position-absolute">
+      <div class="row">
+        <div id="currentPage"></div>
+        <div id="currentForm"></div>
+      </div> 
+    </div>   
 
     <div id="footer"></div>
 
@@ -30,6 +34,7 @@
     <script src="helpers.js"></script>
     <script>
       let theTemplate = new template("./create-content.html");
+
       theTemplate.loadTemplate("create");
       theTemplate.loadForm("goal");
     </script>
