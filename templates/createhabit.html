@@ -14,15 +14,9 @@
   </head>
 
   <body class="background">
+
     <div id="nav"></div>
-
-    <div class="container create position-absolute">
-      <div class="row">
-        <div id="currentPage"></div>
-        <div id="currentForm"></div>
-      </div> 
-    </div>   
-
+    <div id="currentPage"></div>
     <div id="footer"></div>
 
     <!-- JQuery -->
@@ -31,12 +25,16 @@
     </script>
 
     <!-- nav, currentPage and footer -->
-    <script src="helpers.js"></script>
+    <script src="./helpers.js"></script>
     <script>
-      let theTemplate = new template("./create-content.html");
 
-      theTemplate.loadTemplate("create");
-      theTemplate.loadForm("goal");
+      async function load(){
+      let theTemplate = new template("./create/create-content.html");
+      await new Promise( resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve));
+      theTemplate.loadForm();
+      };
+
+      load();
     </script>
 
 
