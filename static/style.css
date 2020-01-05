@@ -87,3 +87,22 @@
     width:175px;
     margin:15px 0px;
 }
+
+/* Create page*/
+
+.create{
+    bottom: 75px;
+    top: 75px;
+    left:20px;
+    font-size: large;
+    width:100px;
+
+}
+
+.create a{
+    color:black;
+}
+
+.create a:hover{
+    color:black;
+}
