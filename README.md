@@ -1,5 +1,5 @@
 # habitsapp
-A Desktop App for Creating and Destroying Habits
+A Desktop App which creates a habit cheat sheet based off of the book "Atomic Habits" by James Clear.
 
 ## Getting Started
 

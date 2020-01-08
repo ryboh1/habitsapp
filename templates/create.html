@@ -21,20 +21,21 @@
 
     <!-- JQuery -->
     <script>      
-      window.$ = require("./jquery-1.10.2.min.js");
+      window.$ = require("./jquery-3.4.1.js");
     </script>
 
     <!-- nav, currentPage and footer -->
-    <script src="./helpers.js"></script>
+    <script src="./page-template.js"></script>
     <script>
+      let theTemplate = new template("./create-content.html");
 
       async function load(){
-      let theTemplate = new template("./create/create-content.html");
-      await new Promise( resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve));
-      theTemplate.loadForm();
+        await new Promise(resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve));
+        theTemplate.createResponsiveTabs();
       };
 
       load();
+
     </script>
 
 

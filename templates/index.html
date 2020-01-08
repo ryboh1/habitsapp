@@ -24,13 +24,13 @@
 
     <!-- JQuery -->
     <script>      
-      window.$ = require("./jquery-1.10.2.min.js");
+      window.$ = require("./jquery-3.4.1.js");
     </script>
 
     <!-- nav, currentPage and footer -->
-    <script src="helpers.js"></script>
+    <script src="page-template.js"></script>
     <script>
-      let theTemplate = new template("./about.html");
+      let theTemplate = new template("./about-content.html");
       theTemplate.loadTemplate("about", "./nav.html", "./footer.html");
     </script>
 

@@ -99,10 +99,10 @@
 
 }
 
-.create a{
-    color:black;
+[data-tab-content]{
+    display: none;
 }
 
-.create a:hover{
-    color:black;
+[data-tab-content].active{
+    display: block;
 }
