@@ -1,35 +1,98 @@
-<!-- Multiple forms -->
 <div class="container create position-absolute">
     <div class="row">
-        <div class="col-11 offset-1">
-            <ul class="list-group">
+        <div class="col-3">
+            <ul class="list-group headings">
                 <li data-tab-target="#goal" class="list-group-item active">Goal</li>
                 <li data-tab-target="#response" class="list-group-item">Response</li>
                 <li data-tab-target="#reward" class="list-group-item">Reward</li>
                 <li data-tab-target="#cue" class="list-group-item">Cue</li> 
                 <li data-tab-target="#craving" class="list-group-item">Craving</li>
-                <li data-tab-target="#preview" class="list-group-item">Preview</li>
+                <li data-tab-target="#preview" class="list-group-item">Preview + Create</li>
             </ul>
-
+        </div>
+        <div class="col-9">
             <form action="" class="tab-content">
-                <div id="goal" data-tab-content class="active">
-                    <h1>GOAL</h1>
+                <div id="goal" data-tab-content class="active form-group">
+                    <h2>Goal</h2>
+                    <label>What is your desired outcome?</label>
+                    <input id="goalOne" type="text" class="form-control">
+
+                    <label>What type of person achieves that outcome?</label>
+                    <input id="goalTwo" type="text" class="form-control" >
+
                 </div>
-                <div id="response" data-tab-content>
-                    <h1>Resonse</h1>
+
+                <div id="response" data-tab-content class="form-group">
+                    <h1>Response</h1>
+
+                    <label>What habit does this type of person have?</label>
+                    <input id="responseOne" type="text" class="form-control">
+
+                    <p>List what you could do for the first 2 minutes of this new habit, from very easy to very difficult.</p>
+
+                    <table id="responseTwo" class="table-sm"> 
+                        <tr>
+                            <th>Very Easy</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>Easy</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>Normal</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>Difficult</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <th>Very Difficult</th>
+                            <td><input type="text"></td>
+                        </tr>
+                        
+                        
+                    </table>
                 </div>
+
                 <div id="reward" data-tab-content>
                     <h1>Reward</h1>
+                    
+                    <label>What can you keep track of to measure your progress?</label>
+                    <input id="rewardTwo" type="text" class="form-control">
+                    
+                    <label>What will you use to track your progress?</label>
+                    <input id="rewardOne" type="text" class="form-control">
                 </div>
+
                 <div id="cue" data-tab-content>
                     <h1>Cue</h1>
+
+                    <label>How can you design your enviroment to make it obivous to do your new habit?</label>
+                    <input id="cueOne" type="text" class="form-control">
+
+                    <label>Which established habit will you do before your new habit?</label>
+                    <input id="cueTwo" type="text" class="form-control">
+                
                 </div>
+
                 <div id="craving" data-tab-content>
                     <h1>Craving</h1>
+
+                    <label>How can you re-frame your new habit to make it seem more attractive?</label>
+                    <input id="cravingOne" type="text" class="form-control">
+
+                    <label>What habit you want to do, will you do after your new habit?</label>
+                    <input id="cravingTwo" type="text" class="form-control">
                 </div>
+
                 <div id="preview" data-tab-content>
-                    <h1>Preview</h1>
+                    <h1>Preview + Create Habit</h1>
+                    
+                    <input type="submit" value="Create Habit">
                 </div>
+
             </form>
         </div>
     </div>    
