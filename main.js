@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 
 function createWindow () {
@@ -20,4 +20,8 @@ function createWindow () {
   win.webContents.openDevTools()
 
 }
-app.on('ready', createWindow)
+app.on('ready', createWindow);
+
+ipcMain.on("create-form-data", (event,data ) => {
+  console.log(data);
+});

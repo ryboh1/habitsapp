@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
@@ -14,7 +15,6 @@
   </head>
 
   <body class="background">
-
     <div id="nav"></div>
     <div id="currentPage"></div>
     <div id="footer"></div>
@@ -28,16 +28,9 @@
     <script src="./page-template.js"></script>
     <script>
       let theTemplate = new template("./create-content.html");
-
-      async function load(){
-        await new Promise(resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve));
-        theTemplate.createResponsiveTabs();
-      };
-
-      load();
-
+      let aPromise = new Promise(resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve))
+      .then((result) => theTemplate.createResponsiveTabs());
     </script>
-
-
   </body>
+
 </html>
