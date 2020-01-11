@@ -99,10 +99,29 @@
 
 }
 
-[data-tab-content]{
+.tab-panel{
     display: none;
 }
 
-[data-tab-content].active{
+.tab-panel.active{
     display: block;
 }
+ .list-group-item a{
+     color:black;
+     text-decoration: none;
+ }
+
+ .list-group-item.active a{
+     color:white;
+ }
+
+.list-group-item a:hover{
+    text-decoration: none;
+    color:black;
+}
+
+.list-group-item.active a:hover{
+    text-decoration: none;
+    color:white;
+}
+

@@ -15,26 +15,31 @@ function template(currentPagePath){
     };
 
     this.createResponsiveTabs = () => {
-        const tabs = document.querySelectorAll("[data-tab-target]");
-        const allTabContents = document.querySelectorAll("[data-tab-content")
-
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () =>{
-                allTabContents.forEach(tabContent =>{
-                    tabContent.classList.remove("active");
-                });
-            
-            let amountOfTabs = Object.keys($("[data-tab-target]")).length;
-            const currentTarget = $(tab.dataset.tabTarget);
-            for(let i = 0; i < amountOfTabs; i++ ){
-                let eachTab = $("[data-tab-target]")[i];
-                $(eachTab).removeClass("active");
-            };
-            $(currentTarget).addClass("active");
-            $(tab).addClass("active")
+        $(".tab-list").each( function () {    
+            /* variables for this tab-list*/
+            let $this = $(this);
+            let $tab = $this.find("li.active");
+            let $link = $tab.find("a");
+            let $panel = $($link.attr("href"));
+        
+            /*When Clicked on a tab run this function*/
+            $this.on("click", ".tab-control", function (e) {
+                
+                e.preventDefault();
+        
+                let $link = $(this);
+                let id = this.hash;
+        
+                if (id && !$link.is("active")) {
+                    $panel.removeClass("active");
+                    $tab.removeClass("active");
+        
+                $panel = $(id).addClass("active");
+                $tab = $link.parent().addClass("active");
+                }
             });
         });
-    }
+    };
 
     this.submitForm = (formID) => {
         let {ipcRenderer} = require("electron");
