@@ -23,5 +23,5 @@ function createWindow () {
 app.on('ready', createWindow);
 
 ipcMain.on("create-form-data", (event,data ) => {
-  console.log(data);
+  
 });

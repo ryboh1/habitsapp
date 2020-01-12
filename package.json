@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/ryboh1/habitsapp#readme",
   "dependencies": {
-    "boostrap": "^2.0.0",
-    "electron": "^7.1.7"
+    "boostrap": "^4.0.0",
+    "electron": "^7.1.7",
+    "html-pdf": "^2.2.0"
   },
   "devDependencies": {
     "electron": "^7.1.7"

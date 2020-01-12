@@ -8,6 +8,7 @@ A Desktop App which creates a habit cheat sheet based off of the book "Atomic Ha
 - Electron
 - JQuery
 - Bootstrap
+- html-pdf
 
 ## Instructions
 

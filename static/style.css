@@ -106,13 +106,19 @@
 .tab-panel.active{
     display: block;
 }
+
+.list-group-item.active{
+    background-color: orange !important;
+    border-color: orange !important;
+}
+
  .list-group-item a{
      color:black;
      text-decoration: none;
  }
 
  .list-group-item.active a{
-     color:white;
+     color:black;
  }
 
 .list-group-item a:hover{
@@ -120,8 +126,14 @@
     color:black;
 }
 
-.list-group-item.active a:hover{
-    text-decoration: none;
-    color:white;
+/*cheat sheet*/
+.when ,.tracker, .benefits, .two-minutes{
+    background-color: white;
+    border-radius: 10px;
+    margin: 50px 0px;
+    padding:10px;
 }
 
+.cheat-sheet{
+    background-color:#e3eaea ;
+}
