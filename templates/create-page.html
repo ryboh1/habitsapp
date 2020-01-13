@@ -21,11 +21,12 @@
 
     <!-- JQuery -->
     <script>      
-      window.$ = require("./jquery-3.4.1.js");
+      window.$ = require("../static/jquery-3.4.1.js");
     </script>
 
-    <!-- nav, currentPage and footer -->
-    <script src="./page-template.js"></script>
+    <!-- Gets page template.js -->
+    <script src="../static/js/page-template.js"></script>
+    
     <script>
       let theTemplate = new template("./create-content.html");
       let aPromise = new Promise(resolve => theTemplate.loadTemplate("create","./nav.html", "./footer.html", resolve))
