@@ -1,35 +1,20 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
-const {sqlCommands:sqlCommands} = require("./controller/sql-commands.js");
+const {app, BrowserWindow, ipcMain } = require('electron');
+const {sqlCommands:sqlCommands} = require("./model/sql-commands.js");
+const {window:window} = require("./controller/helpers.js")
 
-function createWindow () {
-  // Create the browser window.
-  let win = new BrowserWindow({
-    width: 900,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    },
-    resizable:false
-  });
+let SQL = new sqlCommands();
 
-  // and load the index.html of the app.
-  win.loadFile('./templates/index.html')
+app.on("ready", function (){
+  let theWindow = new window();
+  theWindow.createWindow(BrowserWindow);
 
-
-  // Chrome Dev Tools
-  win.webContents.openDevTools()
-
-}
-app.on("ready", createWindow);
-
-app.on("ready",() => {
-  let theSQL = new sqlCommands();
-
-  theSQL.createDatabase();
-  theSQL.createTables();
+  SQL.createDatabase();
+  SQL.createTables();
 });
 
-//Create Habit Save Form request
+
 ipcMain.on("create-form-data", (event,data ) => {
 
+  SQL.insertData("userCreateHabits",data);
+  event.sender.send("return success");
 });

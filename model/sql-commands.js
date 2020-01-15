@@ -40,4 +40,9 @@ exports.sqlCommands = function sqlCommands(){
         SQL.queryDatabase(breakTable);
     };
 
+    this.insertData = (theTable, theData) => {
+        let insertForm = `INSERT INTO ${theTable}(usersHabitData) VALUES("${theData}");`;
+        SQL.queryDatabase(insertForm);
+    };
+
 }
