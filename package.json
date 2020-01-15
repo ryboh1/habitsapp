@@ -20,7 +20,6 @@
     "boostrap": "^4.0.0",
     "bootstrap": "^4.4.1",
     "electron": "^7.1.7",
-    "html-pdf": "^2.2.0",
     "mysql": "^2.17.1"
   },
   "devDependencies": {
