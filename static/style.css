@@ -127,13 +127,39 @@
 }
 
 /*cheat sheet*/
-.when ,.tracker, .benefits, .two-minutes{
-    background-color: white;
-    border-radius: 10px;
-    margin: 50px 0px;
-    padding:10px;
+.cheat-sheet{
+    background-color:white ;
 }
 
-.cheat-sheet{
-    background-color:#e3eaea ;
+.cheat-sheet h3{
+    background:#f4f4f4;
+    border-top:1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
+    margin-top: 10px;
+}
+
+.cheat-sheet button{
+    color:white;
+}
+
+/*Habit-saved */
+
+.saved-content{
+    bottom: 75px;
+    top: 200px;
+}
+
+.saved-animation{
+    color:orange;
+    background-color: #0C0253;
+    border-radius: 5px;
+    padding:10px;
+    animation-name:example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example{
+    50%{color:white;}
+    100%{color:orange;}
 }

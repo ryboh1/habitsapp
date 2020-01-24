@@ -16,5 +16,18 @@ app.on("ready", function (){
 ipcMain.on("create-form-data", (event,data ) => {
 
   SQL.insertData("userCreateHabits",data);
-  event.sender.send("return success");
+  event.returnValue = "recieved";
+});
+
+ipcMain.on("goal-options", (event, data) =>{
+
+  if(data == "create"){
+    SQL.getGoalData();
+  }
+
+
+  if(data == "break"){
+    console.log("break");
+  };
+
 });

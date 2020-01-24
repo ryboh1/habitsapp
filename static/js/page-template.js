@@ -7,7 +7,7 @@ function template(currentPagePath){
         await new Promise(resolve => $('#nav').load(`${navPath}`, resolve));
         await new Promise(resolve => $("#currentPage").load(this.currentPagePath, resolve));
         await new Promise(resolve => $('#footer').load(`${footerPath}`, resolve));
-            
+
         $(`#${pageHeading}`).addClass("current-page");            
         if(theResolve != undefined){
             return theResolve("completed");
@@ -41,11 +41,17 @@ function template(currentPagePath){
         });
     };
 
-    this.submitForm = (formID) => {
-        let {ipcRenderer} = require("electron");
+    let {ipcRenderer} = require("electron");
 
-        const myData = $(`#${formID}`).serialize();
+    this.submitForm = (formID) => {
+        const myData = $(`#${formID}`).serializeArray();
         ipcRenderer.sendSync("create-form-data",myData);
     };
+
+    this.getGoalOptions = (option) =>{
+        ipcRenderer.send("goal-options", option);
+    };
+
+    
 
 };

@@ -14,7 +14,5 @@ exports.window = function window() {
     // and load the index.html of the app.
     win.loadFile('./templates/index.html')
   
-    // Chrome Dev Tools
-    win.webContents.openDevTools()  
   };
 }

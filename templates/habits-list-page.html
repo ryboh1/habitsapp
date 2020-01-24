@@ -18,17 +18,14 @@
     <div id="currentPage"></div>    
     <div id="footer"></div>
 
-
     <!-- JQuery -->
     <script>window.$ = require("../static/jquery-3.4.1.js");</script>
 
     <!-- nav, currentPage and footer -->
     <script src="../static/js/page-template.js"></script>
     <script>
-      let theTemplate = new template("./about-content.html");
-      theTemplate.loadTemplate("about", "./nav.html", "./footer.html");
+      let theTemplate = new template("./habits-list-content.html");
+      theTemplate.loadTemplate("list", "./nav.html", "./footer.html");
     </script>
-
-
   </body>
 </html>

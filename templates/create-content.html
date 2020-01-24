@@ -13,7 +13,7 @@
         </div>
 
         <div class="col-9">
-            <form onsubmit="theTemplate.submitForm('createForm')" id="createForm" action="GET" class="tab-content">
+            <form onsubmit="theTemplate.submitForm('createForm')" id="createForm" action="./habit-saved.html" class="tab-content" method="POST">
 
                 <div id="tab-goal"  class="active form-group tab-panel">
                     <h1>Goal</h1>
@@ -55,9 +55,9 @@
                 <div id="tab-reward" class="tab-panel">
                     <h1>Reward</h1>
                     <label>What can you keep track of to measure your progress?</label>
-                    <input name="rewardTwo" type="text" placeholder="Amount of work out sessions..." class="form-control">
+                    <input name="rewardOne" type="text" placeholder="Amount of work out sessions..." class="form-control">
                     <label>What will you use to track your progress?</label>
-                    <input name="rewardOne" type="text" placeholder="Fitness app..." class="form-control">
+                    <input name="rewardTwo" type="text" placeholder="Fitness app..." class="form-control">
                 </div>
 
                 <div id="tab-cue" class="tab-panel">
@@ -71,9 +71,9 @@
                 <div id="tab-craving" class="tab-panel">
                     <h1>Craving</h1>
                     <label>What are the benefits of your new habit?</label>
-                    <input name="cravingOneOne" type="text" placeholder="I get to live longer..." class="form-control">
-                    <input name="cravingOneTwo" type="text" placeholder="I'll have more energy..." class="form-control mt-1 mb-1">
-                    <input name="cravingOneThree" type="text" placeholder="I'll be able to fit into slimmer clothes..." class="form-control">
+                    <input name="cravingOneA" type="text" placeholder="I get to live longer..." class="form-control">
+                    <input name="cravingOneB" type="text" placeholder="I'll have more energy..." class="form-control mt-1 mb-1">
+                    <input name="cravingOneC" type="text" placeholder="I'll be able to fit into slimmer clothes..." class="form-control">
                     <label>What habit you want to do, will you do after your new habit?</label>
                     <input name="cravingTwo" type="text" placeholder="Eat chocolate rice cakes..." class="form-control">
                 </div>

@@ -1,0 +1,8 @@
+1. insert into mysql the form, with a column for each question and answer. 
+
+
+
+to do that :
+    0. create a new column and remember the id of the column. 
+    1. create a loop that inserts each value into each column. 
+

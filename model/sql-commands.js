@@ -28,12 +28,30 @@ exports.sqlCommands = function sqlCommands(){
 
         createTable = `CREATE TABLE IF NOT EXISTS userCreateHabits (
             id INT NOT NULL AUTO_INCREMENT,
-            usersHabitData VARCHAR(2000) NOT NULL,
+
+            goalOne VARCHAR(50),
+            goalTwo VARCHAR(50),
+            responseOne VARCHAR(50),
+            vEasy VARCHAR(50),
+            easy VARCHAR(50),
+            normal VARCHAR(50),
+            difficult VARCHAR(50),
+            vDifficult VARCHAR(50),
+            rewardOne VARCHAR(50),
+            rewardTwo VARCHAR(50), 
+            cueOne VARCHAR(50), 
+            cueTwo VARCHAR(50), 
+            cravingOneA VARCHAR(50),
+            cravingOneB VARCHAR(50),
+            cravingOneC VARCHAR(50),
+            cravingTwo VARCHAR(50), 
+
             PRIMARY KEY (id)
         );`
         breakTable = `CREATE TABLE IF NOT EXISTS userBreakHabits (
             id INT NOT NULL AUTO_INCREMENT,
             usersHabitData VARCHAR(2000) NOT NULL,
+            goal VARCHAR(50),
             PRIMARY KEY (id)
         );`
         SQL.queryDatabase(createTable);
@@ -41,8 +59,30 @@ exports.sqlCommands = function sqlCommands(){
     };
 
     this.insertData = (theTable, theData) => {
-        let insertForm = `INSERT INTO ${theTable}(usersHabitData) VALUES("${theData}");`;
-        SQL.queryDatabase(insertForm);
+        let thePromise = new Promise((resolve, reject) => {
+
+            let insertEmptyRow = `INSERT INTO ${theTable}() VALUES();`;
+            SQL.queryDatabase(insertEmptyRow);
+
+            let selectEmptyRow = `SELECT @@IDENTITY`;
+            SQL.getValue(selectEmptyRow, resolve);
+        })
+
+        .then((theEmptyRowID) => {
+
+            let formLength = theData.length;
+            for(let i = 0; i < formLength; i++){
+                let formColumn = theData[i]["name"];
+                let formValue = theData[i]["value"];
+                
+                let insertColumnData = `UPDATE userCreateHabits SET ${formColumn} = "${formValue}" WHERE id = ${theEmptyRowID}; `;
+                SQL.queryDatabase(insertColumnData);
+            };
+        });
+    };
+
+    this.getGoalData = (theOption) => {
+        let all = SQL.queryDatabase("SELECT usersHabitData FROM userCreateHabits WHERE id = 1;");
     };
 
 }

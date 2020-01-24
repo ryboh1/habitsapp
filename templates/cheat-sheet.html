@@ -6,38 +6,38 @@
     </head>
     <body class="cheat-sheet">
         <div class="container p-2">
+
             <div class="row">
-
-                <div class="col-12">
-                    <h1 class="text-center">(GOAL)</h1>
+                <div class="col-12 p-4">
+                    <h1 class="text-center">(MY GOAL)</h1>
                 </div>
+            </div>
 
+            <div class="row m-1">
+                <button class="btn btn-warning" onclick="window.print()">Download PDF</button>
             </div>
 
             <div class="row">
-
-                <div class="col-5 when">
+                <div class="col-12">
                     <h3>When I will do my new habit:</h3>
                     <p>I will (established habit)</p>
                     <p>After (established habit) I will (new habit).</p>
                     <p>After (new habit) I will (craving habit).</p>
                 </div>
+            </div>
 
-                <div class="col-5 offset-1 benefits">
+            <div class="row">
+                <div class="col-12">
                     <h3>Benefits of new habit:</h3>
                     <ul>
                         <li>(benefitOne)</li>
                         <li>(benefitTwo)</li>
                         <li>(benefitThree)</li>
                     </ul>
-
                 </div>
-
             </div>
-          
             <div class="row">
-
-                <div class="col-5 two-minutes">
+                <div class="col-12">
                     <h3>The first two minutes:</h3>
                     <table class="table table-bordered">
                         <thead>
@@ -58,16 +58,22 @@
                         </tr>
                     </table>
                 </div>
+            </div>
 
-                <div class="col-5 offset-1 tracker">
+            <div class="row">
+                <div class="col-12">
                     <h3>What I will track:</h3>
-                    <p>(track)</p>
+                    <p id="track">(track)</p>
                     <h3>How I will track:</h3>
                     <p>(tracker)</p>
                 </div>
             </div>
-        </div>
-       
 
+        </div>
+
+        <script>
+        let track = document.getElementById("track");
+        track.innerText = `${hey}`;
+        </script>
     </body>
 </html>
