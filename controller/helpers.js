@@ -1,18 +1,14 @@
-exports.window = function window() {
+exports.helpers = function helpers() {
+
+    this.changeToArray = (theGoalData) => {
+        let theLength = theGoalData.length;
+        let theArray = [];
+
+        for(let i = 0; i < theLength; i++){
+            theArray.push(theGoalData[i]["goalTwo"]);
+        };
+
+        return theArray;
+    };
+};
   
-  this.createWindow = (theBrowserWindow) => {
-    // Create the browser window.
-    let win = new theBrowserWindow({
-      width: 900,
-      height: 600,
-      webPreferences: {
-        nodeIntegration: true
-      },
-      resizable:false
-    });
-  
-    // and load the index.html of the app.
-    win.loadFile('./templates/index.html')
-  
-  };
-}

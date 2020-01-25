@@ -9,9 +9,9 @@
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <!--Style Sheet-->
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
   </head>
 
   <body class="background">
@@ -21,15 +21,15 @@
 
     <!-- JQuery -->
     <script>      
-      window.$ = require("../static/jquery-3.4.1.js");
+      window.$ = require("../../static/jquery-3.4.1.js");
     </script>
 
     <!-- Gets page template.js -->
-    <script src="../static/js/page-template.js"></script>
+    <script src="../../static/js/page-template.js"></script>
     
     <script>
-      let theTemplate = new template("./habit-saved-content.html");
-      theTemplate.loadTemplate("create","./nav.html", "./footer.html")
+      let theTemplate = new template("../content/habit-saved-content.html");
+      theTemplate.loadTemplate("create","../content/nav.html", "../content/footer.html")
     </script>
   </body>
 

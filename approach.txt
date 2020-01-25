@@ -1,8 +1,17 @@
-1. insert into mysql the form, with a column for each question and answer. 
+ getOptions
+
+ 1. make an async call to get all the getOptions for create or break
+
+ 
+2. if there is none display no options available
+    1. else display no options available
+
+---------------------------
 
 
+TODO
+    create folders for templates
+    Clean model code
 
-to do that :
-    0. create a new column and remember the id of the column. 
-    1. create a loop that inserts each value into each column. 
 
+then washing

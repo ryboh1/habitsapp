@@ -160,6 +160,6 @@
 }
 
 @keyframes example{
-    50%{color:white;}
+    50%{color:greenyellow;}
     100%{color:orange;}
 }

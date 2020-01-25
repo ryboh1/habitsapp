@@ -7,9 +7,9 @@
     
     <title>Habits</title>
     <!--Style Sheet-->
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
   </head>
 
   <body class="background">
@@ -20,13 +20,13 @@
 
 
     <!-- JQuery -->
-    <script>window.$ = require("../static/jquery-3.4.1.js");</script>
+    <script>window.$ = require("../../static/jquery-3.4.1.js");</script>
 
     <!-- nav, currentPage and footer -->
-    <script src="../static/js/page-template.js"></script>
+    <script src="../../static/js/page-template.js"></script>
     <script>
-      let theTemplate = new template("./about-content.html");
-      theTemplate.loadTemplate("about", "./nav.html", "./footer.html");
+      let theTemplate = new template("../content/about-content.html");
+      theTemplate.loadTemplate("about", "../content/nav.html", "../content/footer.html");
     </script>
 
 

@@ -50,8 +50,30 @@ function template(currentPagePath){
 
     this.getGoalOptions = (option) =>{
         ipcRenderer.send("goal-options", option);
+
+        ipcRenderer.on("returned-options",(event, returnedOptions) => {
+            let selectElement = document.getElementById("habit-list");
+            let amountOfOptions = returnedOptions.length;
+            let currentAmountOfOptions = selectElement.options.length;
+
+            removeOldOptions(currentAmountOfOptions, selectElement);
+            addNewOptions(amountOfOptions, selectElement, returnedOptions);
+        });
     };
+};
 
-    
+/*helper functions */
 
+function removeOldOptions(theCurrentAmountOfOptions, theSelectedElement){
+    for(let i = 0; i < theCurrentAmountOfOptions; i++){
+        theSelectedElement.remove(theSelectedElement[i]);
+    };
+}
+
+function addNewOptions(theAmountOfValues, theSelectedElement, theArgument){
+    for(let i = 0; i < theAmountOfValues; i++){
+        let theOption = document.createElement("option");
+        theOption.text = theArgument[i];
+        theSelectedElement.add(theOption);
+    }
 };

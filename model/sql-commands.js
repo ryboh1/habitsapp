@@ -59,8 +59,8 @@ exports.sqlCommands = function sqlCommands(){
     };
 
     this.insertData = (theTable, theData) => {
-        let thePromise = new Promise((resolve, reject) => {
 
+        let thePromise = new Promise((resolve, reject) => {
             let insertEmptyRow = `INSERT INTO ${theTable}() VALUES();`;
             SQL.queryDatabase(insertEmptyRow);
 
@@ -68,9 +68,10 @@ exports.sqlCommands = function sqlCommands(){
             SQL.getValue(selectEmptyRow, resolve);
         })
 
-        .then((theEmptyRowID) => {
-
+        .then((emptyRowObject) => {
+            let theEmptyRowID = emptyRowObject[0]["@@IDENTITY"]
             let formLength = theData.length;
+
             for(let i = 0; i < formLength; i++){
                 let formColumn = theData[i]["name"];
                 let formValue = theData[i]["value"];
@@ -81,8 +82,15 @@ exports.sqlCommands = function sqlCommands(){
         });
     };
 
-    this.getGoalData = (theOption) => {
-        let all = SQL.queryDatabase("SELECT usersHabitData FROM userCreateHabits WHERE id = 1;");
+    this.getGoalData = (theOption, theResolve) => {
+
+        let thePromise = new Promise((resolve) =>{
+            SQL.getValue(`SELECT goalTwo FROM user${theOption}Habits;`, resolve);
+        })
+
+        .then((result) => {
+            theResolve(result);
+        });
     };
 
 }
