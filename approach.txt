@@ -1,17 +1,5 @@
- getOptions
+TODO:
 
- 1. make an async call to get all the getOptions for create or break
-
- 
-2. if there is none display no options available
-    1. else display no options available
-
----------------------------
-
-
-TODO
-    create folders for templates
-    Clean model code
-
-
-then washing
+    1. create the break habit survey form. 
+    2. style the selection box
+    3. 

@@ -13,41 +13,41 @@
         </div>
 
         <div class="col-9">
-            <form onsubmit="theTemplate.submitForm('createForm', 'create-form-data')" id="createForm" action="./habit-saved.html" class="tab-content" method="POST">
+            <form onsubmit="theTemplate.submitForm('breakForm', 'break-form-data')" id="breakForm" action="./habit-saved.html" class="tab-content" method="POST">
 
                 <div id="tab-goal"  class="active form-group tab-panel">
                     <h1>Goal</h1>
                     <label>What is your desired outcome?</label>
-                    <input name="goalOne" type="text" class="form-control" placeholder="Save money, lose weight, work harder...">
+                    <input name="goalOne" type="text" class="form-control" placeholder="To stop overeating..">
                     <label>What type of person achieves that outcome?</label>
                     <input name="goalTwo" type="text" class="form-control" placeholder="An investor,a gym rat, a hard worker..." >
                 </div>
 
                 <div id="tab-response" class="form-group tab-panel">
                     <h1>Response</h1>
-                    <label>What habit does this type of person have?</label>
-                    <input name="responseOne" type="text" class="form-control" placeholder="Works out...">
-                    <p>List what you could do for the first 2 minutes of this new habit, from very easy to very difficult.</p>
+                    <label>What habit do you want to break?</label>
+                    <input name="responseOne" type="text" class="form-control" placeholder="Over eating...">
+                    <p>List the first 2 minutes of this old habit, from very difficult to very easy...</p>
                     <table name="responseTwo" class="table-sm"> 
                         <tr>
-                            <th>Very Easy</th>
-                            <td><input name="vEasy" class="form-control" type="text" placeholder="put on gym clothes"></td>
-                        </tr>
-                        <tr>
-                            <th>Easy</th>
-                            <td><input name="easy" class="form-control" type="text" placeholder="Go for a walk"></td>
-                        </tr>
-                        <tr>
-                            <th>Normal</th>
-                            <td><input name="normal" class="form-control" type="text" placeholder="Go for a run"></td>
+                            <th>Very Difficult</th>
+                            <td><input name="vDifficult" class="form-control" type="text" placeholder="Put the cookies in the outside shed"></td>
                         </tr>
                         <tr>
                             <th>Difficult</th>
-                            <td><input name="difficult" class="form-control" type="text" placeholder="Drive to the gym"></td>
+                            <td><input name="difficult" class="form-control" type="text" placeholder="Put the cookies in the attic"></td>
                         </tr>
                         <tr>
-                            <th>Very Difficult</th>
-                            <td><input name="vDifficult" class="form-control" type="text" placeholder="Run to the gym"></td>
+                            <th>Normal</th>
+                            <td><input name="normal" class="form-control" type="text" placeholder="Put the cookies in the top cupboard"></td>
+                        </tr>
+                        <tr>
+                            <th>Easy</th>
+                            <td><input name="easy" class="form-control" type="text" placeholder="Put the cookies in the bread bin"></td>
+                        </tr>
+                        <tr>
+                            <th>Very Easy</th>
+                            <td><input name="vEasy" class="form-control" type="text" placeholder="Put always on display"></td>
                         </tr>
                     </table>
                 </div>
@@ -55,27 +55,27 @@
                 <div id="tab-reward" class="tab-panel">
                     <h1>Reward</h1>
                     <label>What can you keep track of to measure your progress?</label>
-                    <input name="rewardOne" type="text" placeholder="Amount of work out sessions..." class="form-control">
+                    <input name="rewardOne" type="text" placeholder="Calorie counter..." class="form-control">
                     <label>What will you use to track your progress?</label>
                     <input name="rewardTwo" type="text" placeholder="Fitness app..." class="form-control">
                 </div>
 
                 <div id="tab-cue" class="tab-panel">
                     <h1>Cue</h1>
-                    <label>How can you design your enviroment to make it obivous to do your new habit?</label>
-                    <input name="cueOne" type="text" placeholder="Plan out my gym days..." class="form-control">
-                    <label>Which established habit will you do before your new habit?</label>
-                    <input name="cueTwo" type="text" placeholder="Work..." class="form-control">
+                    <label>How can you design your enviroment to make your old habit invisible?</label>
+                    <input name="cueOne" type="text" placeholder="Always keep unhealthy snacks in the outside shed..." class="form-control">
+                    <label>What cue starts your old habit?</label>
+                    <input name="cueTwo" type="text" placeholder="Feeling extremely hungry..." class="form-control">
                 </div>
 
                 <div id="tab-craving" class="tab-panel">
                     <h1>Craving</h1>
-                    <label>What are the benefits of your new habit?</label>
-                    <input name="cravingOneA" type="text" placeholder="I get to live longer..." class="form-control">
-                    <input name="cravingOneB" type="text" placeholder="I'll have more energy..." class="form-control mt-1 mb-1">
-                    <input name="cravingOneC" type="text" placeholder="I'll be able to fit into slimmer clothes..." class="form-control">
-                    <label>What habit you want to do, will you do after your new habit?</label>
-                    <input name="cravingTwo" type="text" placeholder="Eat chocolate rice cakes..." class="form-control">
+                    <label>What are the negatives of your old habit?</label>
+                    <input name="cravingOneA" type="text" placeholder="Live a shorter life..." class="form-control">
+                    <input name="cravingOneB" type="text" placeholder="Look less attractive..." class="form-control mt-1 mb-1">
+                    <input name="cravingOneC" type="text" placeholder="Clothes won't fit..." class="form-control">
+                    <label>What habit you don't want to do, will you do after your old habit?</label>
+                    <input name="cravingTwo" type="text" placeholder="Give money away..." class="form-control">
                 </div>
 
                 <div id="tab-save" class="tab-panel">

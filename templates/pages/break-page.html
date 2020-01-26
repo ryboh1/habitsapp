@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+    <title>Habits</title>
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="../../static/style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+  </head>
+
+  <body class="background">
+    <div id="nav"></div>
+    <div id="currentPage"></div>
+    <div id="footer"></div>
+
+    <!-- JQuery -->
+    <script>      
+      window.$ = require("../../static/jquery-3.4.1.js");
+    </script>
+
+    <!-- Gets page template.js -->
+    <script src="../../static/js/page-template.js"></script>
+    
+    <script>
+      let theTemplate = new template("../content/break-content.html");
+      let aPromise = new Promise(resolve => theTemplate.loadTemplate("break","../content/nav.html", "../content/footer.html", resolve))
+      .then((result) => theTemplate.createResponsiveTabs());
+    </script>
+  </body>
+
+</html>

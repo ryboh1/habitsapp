@@ -19,6 +19,12 @@ ipcMain.on("create-form-data", (event,data ) => {
   event.returnValue = "recieved";
 });
 
+ipcMain.on("break-form-data", (event,data) => {
+  console.log("hello");
+  SQL.insertData("userBreakHabits", data);
+  event.returnValue = "recieved";  
+});
+
 ipcMain.on("goal-options", (event, habitOption) =>{
   let theHelper = new helpers();
 

@@ -43,9 +43,9 @@ function template(currentPagePath){
 
     let {ipcRenderer} = require("electron");
 
-    this.submitForm = (formID) => {
+    this.submitForm = (formID, formIdentifier) => {
         const myData = $(`#${formID}`).serializeArray();
-        ipcRenderer.sendSync("create-form-data",myData);
+        ipcRenderer.sendSync(formIdentifier,myData);
     };
 
     this.getGoalOptions = (option) =>{
