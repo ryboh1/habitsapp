@@ -1,0 +1,22 @@
+<div class="container habit-list-page position-absolute">
+
+    <div class="row">
+        <div class="col-3 offset-4">
+            <label for="">Create Habits: </label>
+            <input value="Create" type="radio" name="habit-tables" checked onchange="theTemplate.getGoalOptions('Create')">
+        </div>
+
+        <div class="col-3">
+            <label for="">Break Habits: </label>
+            <input value="Break" type="radio" name="habit-tables" onchange="theTemplate.getGoalOptions('Break')">
+        </div>
+    </div>
+
+    <div class="row all-habits">
+        <div class="col-6 offset-4" id="listOfHabits"></div>
+    </div>
+
+    <div class="row preview-and-download">
+        <button class="btn btn-warning"><a id="preview-link" href="#">Preview and Download</a></button>
+    </div>
+</div>

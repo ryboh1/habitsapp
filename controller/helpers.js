@@ -1,6 +1,6 @@
 exports.helpers = function helpers() {
 
-    this.changeToArray = (theGoalData) => {
+    this.getGoal = (theGoalData) => {
         let theLength = theGoalData.length;
         let theArray = [];
 

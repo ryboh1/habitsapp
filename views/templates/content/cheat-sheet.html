@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
         <link rel="stylesheet" href="../../static/style.css">
-        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
     </head>
     <body class="cheat-sheet">
         <div class="container p-2">
 
             <div class="row">
                 <div class="col-12 p-4">
-                    <h1 class="text-center">(MY GOAL)</h1>
+                    <h1 class="text-center" id="goalTwo">(MY GOAL)</h1>
                 </div>
             </div>
 
@@ -20,9 +23,9 @@
             <div class="row">
                 <div class="col-12">
                     <h3>When I will do my new habit:</h3>
-                    <p>I will (established habit)</p>
-                    <p>After (established habit) I will (new habit).</p>
-                    <p>After (new habit) I will (craving habit).</p>
+                    <p>I will <span id="cueOne"></span></p>
+                    <p>After <span id="cueOne"></span> I will <span id="responseOne"></span></p>
+                    <p>After <span id="responseOne"></span> I will <span id="cravingTwo"></span></p>
                 </div>
             </div>
 
@@ -30,9 +33,9 @@
                 <div class="col-12">
                     <h3>Benefits of new habit:</h3>
                     <ul>
-                        <li>(benefitOne)</li>
-                        <li>(benefitTwo)</li>
-                        <li>(benefitThree)</li>
+                        <li id="cravingOneA">(benefitOne)</li id="">
+                        <li id="cravingOneB">(benefitTwo)</li>
+                        <li id="cravingOneC">(benefitThree)</li>
                     </ul>
                 </div>
             </div>
@@ -50,11 +53,11 @@
                             </tr>
                         </thead>
                         <tr>
-                            <td>(very easy)</td>
-                            <td>(easy)</td>
-                            <td>(normal)</td>
-                            <td>(difficult)</td>
-                            <td>(very difficult)</td>
+                            <td id="vEasy"></td>
+                            <td id="easy"></td>
+                            <td id="normal"></td>
+                            <td id="difficult"></td>
+                            <td id="vDifficult"></td>
                         </tr>
                     </table>
                 </div>
@@ -63,17 +66,27 @@
             <div class="row">
                 <div class="col-12">
                     <h3>What I will track:</h3>
-                    <p id="track">(track)</p>
+                    <p id="rewardOne">(track)</p>
                     <h3>How I will track:</h3>
-                    <p>(tracker)</p>
+                    <p id="rewardTwo">(tracker)</p>
                 </div>
             </div>
 
-        </div>
+            <!-- jquery -->
+            <script>window.$ = require("../../static/jquery-3.4.1.js");</script>
 
-        <script>
-        let track = document.getElementById("track");
-        track.innerText = `${hey}`;
-        </script>
+            <!-- async request-->
+            <script src="../../static/js/page-template.js"></script>
+            <script>
+                const theTemplate = new template();
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                let goalTwo = urlParams.get("goalTwo");
+                let table = urlParams.get("table");
+
+                theTemplate.getCheatSheetData(table, goalTwo);
+
+            </script>
+        </div>        
     </body>
 </html>

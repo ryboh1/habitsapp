@@ -98,10 +98,21 @@ exports.sqlCommands = function sqlCommands(){
         });
     };
 
-    this.getGoalData = (theOption, theResolve) => {
+    this.getData = (theOption, theSelection,theResolve) => {
 
         let thePromise = new Promise((resolve) =>{
-            SQL.getValue(`SELECT goalTwo FROM user${theOption}Habits;`, resolve);
+            SQL.getValue(`SELECT ${theSelection} FROM user${theOption}Habits;`, resolve);
+        })
+
+        .then((result) => {
+            theResolve(result);
+        });
+    };
+
+    this.getRow = (tableName, rowColumn, rowValue, theResolve) => {
+
+        new Promise((resolve) =>{
+            SQL.getValue(`SELECT * FROM user${tableName}Habits WHERE ${rowColumn} = "${rowValue}";`, resolve);
         })
 
         .then((result) => {

@@ -52,28 +52,38 @@ function template(currentPagePath){
         ipcRenderer.send("goal-options", option);
 
         ipcRenderer.on("returned-options",(event, returnedOptions) => {
-            let selectElement = document.getElementById("habit-list");
-            let amountOfOptions = returnedOptions.length;
-            let currentAmountOfOptions = selectElement.options.length;
-
-            removeOldOptions(currentAmountOfOptions, selectElement);
-            addNewOptions(amountOfOptions, selectElement, returnedOptions);
+            
+            let habitName;
+            $('#listOfHabits label').remove();
+            
+            $.each(returnedOptions, (index, habit) => {
+                if(habit == ""){
+                    habit = "No Goal Set";
+                    habitName = "";
+                }
+                else{
+                    habitName = habit;
+                }
+                $("#listOfHabits").append(`<label class="habit-list">${habit}<input value="${habitName}" name="habits-group" type="radio" onclick="changeAnchorLink()"><span class="checkmark"></span></li>`);
+            });
         });
     };
-};
+    
+    this.getCheatSheetData = (theTable,theGoalTwo) =>{
 
-/*helper functions */
+        let theData = [theTable, theGoalTwo];
+        ipcRenderer.send("cheat-sheet", theData);
 
-function removeOldOptions(theCurrentAmountOfOptions, theSelectedElement){
-    for(let i = 0; i < theCurrentAmountOfOptions; i++){
-        theSelectedElement.remove(theSelectedElement[i]);
-    };
-}
+        ipcRenderer.on("returned-data", (event, dataObject) =>{
+            this.insertCheatSheetData(dataObject);
+            
+        })
 
-function addNewOptions(theAmountOfValues, theSelectedElement, theArgument){
-    for(let i = 0; i < theAmountOfValues; i++){
-        let theOption = document.createElement("option");
-        theOption.text = theArgument[i];
-        theSelectedElement.add(theOption);
     }
+
+    this.insertCheatSheetData = (theObject) => {
+        $.each(theObject, (name, value) => {
+            $(`#${name}`).html(`${value}`);
+        });
+    };
 };

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     
@@ -9,7 +8,7 @@
     <!--Style Sheet-->
     <link rel="stylesheet" href="../../static/style.css">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
   </head>
 
   <body class="background">
@@ -25,8 +24,24 @@
     <script src="../../static/js/page-template.js"></script>
     <script>
       let theTemplate = new template("../content/habits-list-content.html");
-      
-      theTemplate.loadTemplate("list", "../content/nav.html", "../content/footer.html");
+
+      let thePromise = new Promise((resolve) => {
+        theTemplate.loadTemplate("list", "../content/nav.html", "../content/footer.html", resolve);
+      })
+      .then((result) => {
+        theTemplate.getGoalOptions('Create');
+      });
+
+    </script>
+
+    <script>
+      function changeAnchorLink(){
+        let theTable = $("input[name = 'habit-tables']:checked").val();
+        let theHabit = $("input[name = 'habits-group']:checked").val();
+
+        $("#preview-link").attr("href",`../content/cheat-sheet.html?table=${theTable}&goalTwo=${theHabit}`);
+        $("#preview-link").attr("target", "_blank");      
+      };
     </script>
   </body>
 </html>

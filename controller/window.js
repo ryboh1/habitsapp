@@ -12,7 +12,7 @@ exports.window = function window() {
     });
   
     // and load the index.html of the app.
-    win.loadFile('./templates/pages/index.html')
+    win.loadFile('./views/templates/pages/index.html')
   
   };
 }

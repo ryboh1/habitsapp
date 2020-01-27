@@ -163,3 +163,90 @@
     50%{color:greenyellow;}
     100%{color:orange;}
 }
+
+/*habit-list*/
+.habit-list-page{
+    bottom: 75px;
+    top: 75px;
+}
+
+#listOfHabits label{
+    margin-top: 10px;
+}
+
+#listOfHabits{
+    border: 1px solid #0C0253;
+    border-left: 1px solid #0C0253;
+    box-shadow: -5px 5px #BFD2FF;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.habit-list {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.habit-list input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #CFE4FF;
+    border-radius: 50%;
+}
+  
+.habit-list:hover input ~ .checkmark {
+    background-color: #FFDFB1;
+}
+  
+.habit-list input:checked ~ .checkmark {
+    background-color: orange;
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.habit-list input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.habit-list .checkmark:after {
+    top: 8px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}  
+
+.preview-and-download{
+    position: absolute;
+    bottom:50px;
+    left:300px
+}
+
+#preview-link{
+    text-decoration: none;
+    color:black;
+}

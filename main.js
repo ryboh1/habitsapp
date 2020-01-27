@@ -2,7 +2,9 @@ const {app, BrowserWindow, ipcMain } = require('electron');
 const {sqlCommands:sqlCommands} = require("./model/sql-commands.js");
 const {window:window} = require("./controller/window.js")
 const {helpers:helpers} = require("./controller/helpers.js")
+
 let SQL = new sqlCommands();
+let theHelper = new helpers();
 
 app.on("ready", function (){
   let theWindow = new window();
@@ -20,22 +22,34 @@ ipcMain.on("create-form-data", (event,data ) => {
 });
 
 ipcMain.on("break-form-data", (event,data) => {
-  console.log("hello");
+
   SQL.insertData("userBreakHabits", data);
   event.returnValue = "recieved";  
 });
 
-ipcMain.on("goal-options", (event, habitOption) =>{
-  let theHelper = new helpers();
+ipcMain.on("goal-options", (event, tableSelected) =>{
 
-
-  let thePromise = new Promise((resolve) => {
-    SQL.getGoalData(habitOption, resolve);
+  new Promise((resolve) => {
+    SQL.getData(tableSelected, "goalTwo",resolve);
   })
 
   .then((goalData) => {
-    let goalDataArray = theHelper.changeToArray(goalData);
+    let goalDataArray = theHelper.getGoal(goalData);
     event.reply("returned-options",goalDataArray );
+  });
+});
+
+
+ipcMain.on("cheat-sheet", (event, data) => {
+  let tableSelected = data[0];
+  let habitSelected = data[1];
+
+  new Promise((resolve) => {
+    SQL.getRow(tableSelected, "goalTwo",habitSelected, resolve);
+  })
+
+  .then((cheatSheetData) => {
+    event.reply("returned-data",cheatSheetData[0]);
   });
 
 });
