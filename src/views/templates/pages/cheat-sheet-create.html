@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+        <link rel="stylesheet" href="../../static/style.css">
+        <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> 
+    </head>
+    <body class="cheat-sheet">
+        <div class="container p-2">
+
+            <div class="row">
+                <div class="col-12 p-4">
+                    <h1 class="text-center" id="goalTwo"></h1>
+                    <h6 id="responseOne" style="text-transform: capitalize; text-align: center;"></h6>
+                </div>
+            </div>
+
+            <div class="row m-1">
+                <button class="btn btn-warning" onclick="window.print()">Download PDF</button>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3>Cue</h3>
+                    <h6>When I will do my new habit:</h6>
+                    <p>I will <span id="cueTwo"></span></p>
+                    <p>After I <span id="cueTwo"></span> I will <span id="responseOne"></span></p>
+                    <p>After <span id="responseOne"></span> I will <span id="cravingTwo"></span></p>
+                    <h6>How I will make my new habit obvious:</h6>
+                    <p id="cueOne"></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3>Craving</h3>
+                    <h6>Benefits of new habit:</h6>
+                    <ul>
+                        <li id="cravingOneA">(benefitOne)</li id="">
+                        <li id="cravingOneB">(benefitTwo)</li>
+                        <li id="cravingOneC">(benefitThree)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Response</h3>
+                    <h6>The first two minutes:</h6>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Very Easy</th>
+                                <th>Easy</th>
+                                <th>Normal</th>
+                                <th>Difficult</th>
+                                <th>Very Difficult</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td id="vEasy"></td>
+                            <td id="easy"></td>
+                            <td id="normal"></td>
+                            <td id="difficult"></td>
+                            <td id="vDifficult"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3>Reward</h3>
+                    <h6>What I will track:</h6>
+                    <p id="rewardOne">(track)</p>
+                    <h6>How I will track:</h6>
+                    <p id="rewardTwo">(tracker)</p>
+                </div>
+            </div>
+
+            <!-- jquery -->
+            <script>window.$ = require("../../static/jquery-3.4.1.js");</script>
+
+            <!-- async request-->
+            <script src="../../static/js/page-template.js"></script>
+            <script>
+                const theTemplate = new template();
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                let goalTwo = urlParams.get("goalTwo");
+                let table = urlParams.get("table");
+
+                theTemplate.getCheatSheetData(table, goalTwo);
+
+            </script>
+        </div>        
+    </body>
+</html>

@@ -39,7 +39,12 @@
         let theTable = $("input[name = 'habit-tables']:checked").val();
         let theHabit = $("input[name = 'habits-group']:checked").val();
 
-        $("#preview-link").attr("href",`../content/cheat-sheet.html?table=${theTable}&goalTwo=${theHabit}`);
+        if(theTable == "Create"){
+          $("#preview-link").attr("href",`./cheat-sheet-create.html?table=${theTable}&goalTwo=${theHabit}`);
+        }
+        else{
+          $("#preview-link").attr("href",`./cheat-sheet-break.html?table=${theTable}&goalTwo=${theHabit}`);
+        }
         $("#preview-link").attr("target", "_blank");      
       };
     </script>
