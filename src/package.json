@@ -22,6 +22,6 @@
   },
   "devDependencies": {
     "bootstrap": "^4.4.1",
-    "electron": "^7.1.11"
+    "electron": "^11.5.0"
   }
 }
